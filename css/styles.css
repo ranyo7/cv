@@ -1,7 +1,29 @@
+/* used for assistive technologies like programs that read off a screen to the user */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border:0;
+}
+
 body {
   background-color: #DEEDF0;
+  background-size: cover;
+  background-position: top center;
   margin: auto;
-  width: 50%;
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+}
+@media (min-width: 45em) {
+  body {
+    text-align: left;
+  }
 }
 
 hr {
@@ -10,10 +32,243 @@ hr {
   height: 2px;
 }
 
-h1 {
-  color: #0C4271;
+h1, h3, p {
+  color: white;
+}
+p {
+  font-family: sans-serif;
 }
 
-h3 {
-  color: #0C4271;
+nav {
+
+}
+.mobile-nav-toggle {
+  display: none;
+  filter: brightness(0.5);
+}
+@media (max-width:35rem) {
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 2000;
+    right: 3em;
+    top: 2rem;
+    background-image: url(../images/icon-hamburger.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    border: 0;
+  }
+  .mobile-nav-toggle:focus-visible {
+    outline-offset: 5px;
+  }
+  .mobile-nav-toggle[aria-expanded="true"] {
+  filter: brightness(2);
+}
+}
+.primary-nav {
+  background-color: hsla(0,100%,0%, .5);
+  margin: auto auto;
+  width: 100%;
+}
+.primary-nav li {
+  list-style: none;
+}
+.primary-nav li > a {
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+.primary-nav li > a:hover {
+  border-bottom: solid hsla(0,0%,0%, .5) 1px;
+}
+#primary-navigation[data-visible="true"] {
+  transform: translateX(0);
+}
+@media(max-width: 35rem){
+  .primary-nav {
+    background-color: inherit;
+  }
+  #primary-navigation {
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 30%;
+    padding: min(20rem, 10vh) 2rem;
+    margin: 0;
+    background-color: hsla(0,0%,0%, .5);
+    text-align: left;
+    --underline-gap: 0.5rem;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 500ms ease-in-out;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.github {
+  content: "\f09b";
+  margin: auto 0;
+  margin-left: auto;
+}
+
+.fullScreen {
+  height: 90vh;
+}
+
+.center {
+  width: 60%;
+  margin:auto;
+}
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid-container {
+  display: block;
+  text-align: left;
+}
+@media (min-width: 45rem) {
+  .grid-container {
+    display: grid;
+    column-gap: var(--container-gap, 2rem);
+    grid-template-columns: 40% 60%;
+  }
+}
+#home h1 {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0;
+}
+@media(min-width: 45rem){
+  #home h1 {
+    font-size: 2em;
+    text-align: left;
+  }
+  #home .indexText {
+    margin-right: auto;
+  }
+  #home .grid-container {
+    place-items: center;
+  }
+}
+
+#about .grid-container {
+  display: block;
+}
+#about .indexText {
+  position: absolute;
+  width: 58%;
+  top: 18%;
+}
+#about h1 {
+  margin-top: 0;
+}
+#about ul {
+  margin-top: 0;
+}
+@media (min-width: 45rem) {
+  #about .indexText {
+    top: 30%;
+  }
+}
+
+.primary-nav{
+  list-style: none;
+  padding: 2em;
+  color: white;
+}
+
+.profileImg {
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 7em;
+}
+
+.indexText {
+  border-radius: 1em;
+  background-color: hsl(0, 100%, 0%, .5);
+  padding: 1em;
+}
+
+.block{
+  background-color: hsla(0, 100%, 0%, .5);
+  border-radius: 1em;
+  display: grid;
+  column-gap: var(--container-gap, 2rem);
+  grid-template-areas:
+    'image image'
+    'description description';
+}
+
+a > img {
+  width: 100%;
+  border-radius: 1em;
+  height: 7em;
+}
+
+.block > a {
+  grid-area: image;
+  align-self: center;
+}
+
+.description {
+  grid-area: description;
+  width: 90%;
+  margin: auto;
+}
+
+.list {
+  display: grid;
+}
+
+@media (min-width: 45em) {
+  .block{
+    background-color: hsla(0, 100%, 0%, .5);
+    border-radius: 1em;
+    display: grid;
+    column-gap: var(--container-gap, 2rem);
+    grid-template-columns: 40% 60%;
+    grid-template-areas:
+      'image description';
+  }
+  a > img {
+    align-self: center;
+    width: 100%;
+    height: 13em;
+  }
+  .description {
+    margin: inherit;
+  }
+  .list {
+    display: flex;
+  }
+  .profileImg {
+    margin-top: inherit;
+  }
+}
+
+
+.padding {
+  margin: 1em 0;
+}
+
+#home {
+  background-image: url("../images/backgrounds/Lake.jpg");
+}
+#about {
+  background-image: url("../images/backgrounds/desert.jpg");
+}
+#web {
+  background-image: url("../images/backgrounds/desert2.jpg");
+}
+#game {
+  background-image: url("../images/backgrounds/Shore.jpg");
 }

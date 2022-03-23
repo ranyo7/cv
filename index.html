@@ -1,84 +1,51 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-<head>
-  <meta charset="utf-8">
-  <title>Timothy's Personal Site</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Timothy Kidwell</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/719d19a099.js" crossorigin="anonymous"></script>
+  </head>
 
-<body>
+  <body id="home">
 
-  <table cellspacing=20>
-    <tr>
-      <td>
-        <img src="images\headshot.png" alt="Timothy Kidwell">
-      </td>
-      <td>
-        <h1>Timothy Kidwell</h1>
-        <p><em>Software Developer and Chemist</em></p>
-        <p>Former chemist and project manager looking to switch careers to software development. </p>
-        <p><a href="contact.html">Contact me</a></p>
-      </td>
-    </tr>
-  </table>
+    <header>
 
-  <hr>
+      <nav class="flex">
+        <div class="primary-nav">
+          <button class="mobile-nav-toggle" aria-controls="primary-navigation" >
+            <span class="sr-only" aria-expanded="false"> Menu </span>
+          </button>
 
-  <h3>Education</h3>
-  <ul>
-    <li>Associate's of Science in Computer Science. 2020. St. Phillip's College</li>
-    <li>Masters' of Science in Chemistry. 2018. University of Texas at San Antonio</li>
-    <li>Bachelors' of Science in Chemistry. Cum Laude. 2016. University of Texas at San Antonio</li>
-  </ul>
+          <ul id="primary-navigation" data-visible="false" class="center flex">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./web.html">Web Design</a></li>
+            <li><a href="./game-design.html">Game Design</a></li>
+            <a href="https://github.com/ranyo7" class="github"><i class="fa-brands fa-github"></i><span class="sr-only">My github page</span></a>
+          </ul>
+        </div>
+      </nav>
 
-  <hr>
+    </header>
 
-  <h3>Work Experience</h3>
-  <table>
+    <main>
+      <div class="grid-container center fullScreen flex">
+        <div class="">
+          <img class="profileImg" src="./images/fullShot.png" alt="Timothy Kidwell">
+        </div>
 
-    <thead align="left">
-      <tr>
-        <th>Dates</th>
-        <th>Description</th>
-      </tr>
-    </thead>
+        <div class="indexText">
+          <h1>Timothy Kidwell</h1>
+          <p><i>Software and Web Developer</i></p>
+        </div>
+      </div>
+    </main>
 
-    <tr>
-      <td>2021 - 2022</td>
-      <td>Administrative assistant and SharePoint site designer at International Paper</td>
-    </tr>
-    <tr>
-      <td>2018 - 2020</td>
-      <td>Scientist and Project Manager at Southwest Research Insitute(SwRI)</td>
-    </tr>
-    <tr>
-      <td>2016 - 2018</td>
-      <td>Graduate Student Researcher at the University of Texas at San Antonio working with Southwest Research Institute</td>
-    </tr>
-  </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./index.js"></script>
 
-  <h3>Projects</h3>
-  <table>
-    <tr>
-      <td>TinDog</td>      
-    </tr>
-    <tr>
-      <td>Todolist</td>
-    </tr>
-    <tr>
-      <td>Etc</td>
-    </tr>
-  </table>
-
-  <h3>My Hobbies</h3>
-  <ol>
-    <li><a href="https://ranyo7.itch.io/">Game Development</a></li>
-    <li>Hiking and Camping</li>
-    <li>Video and Board Games</li>
-    <li>Reading</li>
-    <li>Baking</li>
-  </ol>
-</body>
-
+  </body>
 </html>
